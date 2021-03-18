@@ -11,4 +11,7 @@ public interface ICategoryController {
 	public ResponseEntity<List<CategoryDTO>> findAll();
 	
 	public ResponseEntity<CategoryDTO> findById(Long id);
+	
+	public ResponseEntity<CategoryDTO> insert(CategoryDTO dto);
 }
+
