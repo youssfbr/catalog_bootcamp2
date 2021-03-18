@@ -1,5 +1,6 @@
 package com.github.youssfbr.aulajpa.controllers;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,8 @@ import com.github.youssfbr.aulajpa.services.CategoryService;
 
 @RestController
 @RequestMapping(value = "/categories")
-public class CategoryController implements ICategoryController {
+public class CategoryController implements ICategoryController, Serializable {	
+	private static final long serialVersionUID = 1L;
 	
 	private CategoryService service;
 	
