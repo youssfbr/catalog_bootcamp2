@@ -7,12 +7,15 @@ import java.util.stream.Collectors;
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.youssfbr.aulajpa.dto.CategoryDTO;
 import com.github.youssfbr.aulajpa.entities.Category;
 import com.github.youssfbr.aulajpa.repositories.CategoryRepository;
+import com.github.youssfbr.aulajpa.services.exceptions.DatabaseException;
 import com.github.youssfbr.aulajpa.services.exceptions.ResourceNotFoundException;
 import com.github.youssfbr.aulajpa.services.interfaces.ICategoryService;
 
@@ -74,4 +77,19 @@ public class CategoryService implements ICategoryService, Serializable {
 			throw new ResourceNotFoundException("Id " + id + " not found");
 		}		
 	}
+
+	@Override
+	public void delete(Long id) {
+		try {
+			repository.deleteById(id);
+		} 
+		catch (EmptyResultDataAccessException e) {
+			throw new ResourceNotFoundException("Id " + id + " not found");
+		}
+		catch (DataIntegrityViolationException e) {
+			throw new DatabaseException("Integrity Violation!");
+		}
+		
+				
+	}	
 }

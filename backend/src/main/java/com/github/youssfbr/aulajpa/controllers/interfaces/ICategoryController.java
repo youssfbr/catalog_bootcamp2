@@ -8,12 +8,14 @@ import com.github.youssfbr.aulajpa.dto.CategoryDTO;
 
 public interface ICategoryController {
 
-	public ResponseEntity<List<CategoryDTO>> findAll();
+	ResponseEntity<List<CategoryDTO>> findAll();
 	
-	public ResponseEntity<CategoryDTO> findById(Long id);
+	ResponseEntity<CategoryDTO> findById(Long id);
 	
-	public ResponseEntity<CategoryDTO> insert(CategoryDTO dto);
+	ResponseEntity<CategoryDTO> insert(CategoryDTO dto);
 	
-	public ResponseEntity<CategoryDTO> update(Long id, CategoryDTO dto); 
+	ResponseEntity<CategoryDTO> update(Long id, CategoryDTO dto);
+
+	ResponseEntity<Void> delete(Long id); 
 }
 

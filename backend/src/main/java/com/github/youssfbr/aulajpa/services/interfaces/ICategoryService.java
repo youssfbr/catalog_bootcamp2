@@ -6,11 +6,13 @@ import com.github.youssfbr.aulajpa.dto.CategoryDTO;
 
 public interface ICategoryService {
 	
-	public List<CategoryDTO> findAll();
+	List<CategoryDTO> findAll();
 	
-	public CategoryDTO findById(Long id);
+	CategoryDTO findById(Long id);
 	
-	public CategoryDTO insert(CategoryDTO dto);
+	CategoryDTO insert(CategoryDTO dto);
 	
-	public CategoryDTO update(Long id, CategoryDTO dto);
+	CategoryDTO update(Long id, CategoryDTO dto);
+	
+	void delete(Long id);
 }
