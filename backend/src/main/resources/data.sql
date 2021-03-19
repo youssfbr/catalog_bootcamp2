@@ -1,6 +1,6 @@
-INSERT INTO tb_category (name) VALUES ('Books');
-INSERT INTO tb_category (name) VALUES ('Eletronics');
-INSERT INTO tb_category (name) VALUES ('Computers');
+INSERT INTO tb_category (name, created_at) VALUES ('Books', NOW());
+INSERT INTO tb_category (name, created_at) VALUES ('Eletronics', NOW());
+INSERT INTO tb_category (name, created_at) VALUES ('Computers', NOW());
 
 INSERT INTO tb_product (name, price, description, img_url) VALUES ('The Lord of the Rings', 90.5, 'Lorem ipsum', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/1-big.jpg');
 INSERT INTO tb_product (name, price, description, img_url) VALUES ('Smart TV', 2190.0, 'Lorem ipsum', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/2-big.jpg');
