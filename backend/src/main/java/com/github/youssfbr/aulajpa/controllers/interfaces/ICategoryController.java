@@ -13,5 +13,7 @@ public interface ICategoryController {
 	public ResponseEntity<CategoryDTO> findById(Long id);
 	
 	public ResponseEntity<CategoryDTO> insert(CategoryDTO dto);
+	
+	public ResponseEntity<CategoryDTO> update(Long id, CategoryDTO dto); 
 }
 

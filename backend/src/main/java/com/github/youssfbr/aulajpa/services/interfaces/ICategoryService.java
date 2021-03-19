@@ -11,4 +11,6 @@ public interface ICategoryService {
 	public CategoryDTO findById(Long id);
 	
 	public CategoryDTO insert(CategoryDTO dto);
+	
+	public CategoryDTO update(Long id, CategoryDTO dto);
 }
